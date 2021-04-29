@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>FORUM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/style/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome</h1>
+      <br>
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-8">
+					<div class="card-form">
+						<form action="" method="post" name="edit_postForm">
+					        <input type="text" placeholder="Enter Email" name="email" value="{{
+					          request.form.email }}">
+					         <input type="password" placeholder="Password" name="password" value="{{
+					          request.form.password }}">
+					        <input class="btn btn-default" type="submit" value="Login">
+				      </form>
+					</div>
+				</div>
+			</div>
+		</div>
+      {% if error %}
+        <div class="alert alert-danger" role="alert">
+		  <p>{{error}}</p>
+		</div>
+      {% endif %}
+    <div>
+    	<a href="{{ url_for('registration')}}">Register</a>
+    </div>
+    </div>
+
+  </body>
+</html>
+
+
+
