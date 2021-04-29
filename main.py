@@ -21,7 +21,7 @@ def login(dynamodb=None):
 		email = request.form['email']
 		password = request.form['password']
 		if not dynamodb:
-			dynamodb = boto3.resource('dynamodb')
+			dynamodb = boto3.resource('dynamodb', region_name='us-west-1')
 		
 		table = dynamodb.Table('login')
 
@@ -59,7 +59,7 @@ def registration(dynamodb=None):
 		password = request.form['password']
 
 		if not dynamodb:
-			dynamodb = boto3.resource('dynamodb')	
+			dynamodb = boto3.resource('dynamodb', region_name='us-west-1')	
 		table = dynamodb.Table('login')
 
 		current_UserEmail = check_email(table, email)
