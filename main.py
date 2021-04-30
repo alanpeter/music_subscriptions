@@ -94,7 +94,7 @@ def home(dynamodb=None):
 		currentUser = session['username']
 
 		if not dynamodb:
-			dynamodb = boto3.resource('dynamodb')
+			dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
 		if request.method == 'POST' and  'searchForm' in request.form:
 			song_title = request.form['title']
