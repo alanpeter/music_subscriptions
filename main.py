@@ -118,8 +118,11 @@ def home(dynamodb=None):
 				query_Results = fetch_InfoByYear(music_table, song_year)
 			elif song_artist:
 				query_Results = fetch_InfoByArtist(music_table, song_artist)
+
+			if query_Results:
+				error_message = None
 			else:
-				error_message = "NOT FOUND"	
+				error_message = "No results is retrieved. Please query again"		
 
 		# if not dynamodb:
 		# 	dynamodb = boto3.resource('dynamodb')	
