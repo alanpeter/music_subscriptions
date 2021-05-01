@@ -64,7 +64,7 @@ def registration(dynamodb=None):
 
 		current_UserEmail = check_email(table, email)
 
-		current_Username = check_username(username)
+		# current_Username = check_username(username)
 
 		if current_UserEmail:
 			error = 'UserID exists'
